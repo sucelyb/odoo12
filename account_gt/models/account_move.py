@@ -16,16 +16,6 @@ class AccountMove(models.Model):
                 tipo = 'venta'
             logging.warn(tipo)
             self.tipo_factura = tipo
- """    else:
-        @api.onchange('journal_id')
-        def onchange_tipo_factura(self):
-            tipo = False
-            if self.move_type in ['in_invoice','in_refund']:
-                tipo = 'compra'
-            if self.move_type in ['out_invoice','out_refund']:
-                tipo = 'venta'
-            logging.warn(tipo)
-            self.tipo_factura = tipo  """
 
     tipo_factura = fields.Selection([('venta','Venta'),('compra', 'Compra o Bien'), ('servicio', 'Servicio'),('varios','Varios'), ('combustible', 'Combustible'),('importacion', 'Importación'),('exportacion','Exportación')],
         string="Tipo de factura")
