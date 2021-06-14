@@ -207,7 +207,7 @@ class AccountMove(models.Model):
                 # monto_gravable_iva = 0
                 # monto_impuesto_iva = 0
                 for linea in factura.invoice_line_ids:
-                    tax_ids = linea.tax_ids
+                    tax_ids = linea.invoice_line_tax_ids 
                     numero_linea = 1
                     bien_servicio = "S" if linea.product_id.type == 'service' else "B"
                     linea_datos = {
@@ -531,7 +531,7 @@ class AccountMove(models.Model):
 
         return super(AccountMove, self)._post(soft)
 
-    def button_draft(self):
+    def action_cancel(self):
         for factura in self:
             if factura.journal_id.feel_tipo_dte and factura.journal_id.feel_codigo_establecimiento:
                 attr_qname = etree.QName("http://www.w3.org/2001/XMLSchema-instance", "schemaLocation")
@@ -695,4 +695,4 @@ class AccountMove(models.Model):
                 else:
                     raise UserError(str('ERROR AL ANULAR'))
 
-        return super(AccountMove, self).button_draft()
+        return super(AccountMove, self).action_cancel()
