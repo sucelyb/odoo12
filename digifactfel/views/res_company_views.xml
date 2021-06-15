@@ -1,16 +1,19 @@
-<openerp>
+<odoo>
   <data>
 
-        <record id="feel_infile.view_company_form" model="ir.ui.view">
-            <field name="name">feel_infile.res.company.form</field>
+        <record id="digifactfel.view_company_form" model="ir.ui.view">
+            <field name="name">digifactfel.res.company.form</field>
             <field name="model">res.company</field>
 	        <field name="inherit_id" ref="base.view_company_form"/>
 	        <field name="arch" type="xml">
-                <data>
-                    <notebook position="inside">
+                    <page name="general_info" position="after">
                         <page string="FEEL">
                             <group string="Frases">
                                 <group>
+                                    <field name="usuario_digifact"/>
+                                    <field name="pass_digifact"/>
+                                    <field name="nit_digifactfel"/>
+                                    <field name="fel_prueba"/>
                                     <field name="feel_frase_ids">
                                         <tree string="Frases" editable="bottom">
                                             <field name="codigo"/>
@@ -21,10 +24,10 @@
                             </group>
 
                         </page>
-                    </notebook>
-                </data>
+                    </page>
 	        </field>
 	    </record>
 
   </data>
-</openerp>
+</odoo>
+>
