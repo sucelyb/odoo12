@@ -504,7 +504,7 @@ class AccountMove(models.Model):
                 else:
                     raise UserError(str( response_json['Mensaje']  ))
 
-        return super(AccountInvoice, self).invoice_validate()
+        return super(AccountMove, self).invoice_validate()
 
     def action_cancel(self):
         for factura in self:
