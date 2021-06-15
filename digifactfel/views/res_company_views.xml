@@ -34,21 +34,3 @@
 
   </data>
 </odoo>
-
-<data>
-                    <notebook position="inside">
-                        <page string="FEEL">
-                            <group string="Frases">
-                                <group>
-                                    <field name="feel_frase_ids">
-                                        <tree string="Frases" editable="bottom">
-                                            <field name="codigo"/>
-                                            <field name="frase"/>
-                                        </tree>
-                                    </field>
-                                </group>
-                            </group>
-
-                        </page>
-                    </notebook>
-                </data>
