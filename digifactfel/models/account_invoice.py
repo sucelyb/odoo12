@@ -55,7 +55,7 @@ class AccountMove(models.Model):
         fecha_hora_emision = str(fecha_convertida)+'T'+str(hora)
         return fecha_hora_emision
 
-    def _post(self,soft=True):
+    def invoice_validate(self):
         for factura in self:
             logging.warn(factura)
             if factura.journal_id and factura.journal_id.feel_tipo_dte and factura.journal_id.feel_codigo_establecimiento:
@@ -504,8 +504,7 @@ class AccountMove(models.Model):
                 else:
                     raise UserError(str( response_json['Mensaje']  ))
 
-        return super(AccountMove, self)._post(soft)
-
+        return super(AccountInvoice, self).invoice_validate()
 
     def action_cancel(self):
         for factura in self:
@@ -671,4 +670,4 @@ class AccountMove(models.Model):
                 else:
                     raise UserError(str('ERROR AL ANULAR'))
 
-        return super(AccountMove, self).action_cancel()
+        return super(AccountMove, self).action_cancel() 
