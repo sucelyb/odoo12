@@ -6,7 +6,9 @@
             <field name="model">res.company</field>
 	        <field name="inherit_id" ref="base.view_company_form"/>
 	        <field name="arch" type="xml">
-                    <page name="general_info" position="after">
+              <data>
+                  <notebook position="inside">                   
+				   <page name="general_info" position="after">
                         <page string="FEEL">
                             <group string="Frases">
                                 <group>
@@ -14,6 +16,7 @@
                                     <field name="pass_digifact"/>
                                     <field name="nit_digifactfel"/>
                                     <field name="fel_prueba"/>
+                                    <field name="feel_codigo_exportador"/>
                                     <field name="feel_frase_ids">
                                         <tree string="Frases" editable="bottom">
                                             <field name="codigo"/>
@@ -25,6 +28,10 @@
 
                         </page>
                     </page>
+					
+				 </notebook>
+                </data>
+	
 	        </field>
 	    </record>
 

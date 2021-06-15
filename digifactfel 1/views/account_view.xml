@@ -18,6 +18,10 @@
                                 <field name="feel_llave_firma"/>
                                 <field name="feel_nombre_comercial"/>
                             </group>
+                            <group>
+                                <field name="producto_descripcion"/>
+                                <field name="descripcion_factura"/>
+                            </group>
                         </group>
                     </page>
                 </page>
