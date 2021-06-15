@@ -4,7 +4,7 @@
 
         <record id="digifact_invoice_form" model="ir.ui.view">
             <field name="name">digifactfel.account.invoice.form</field>
-            <field name="model">account.move</field>
+            <field name="model">account.invoice</field>
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
                 <page name="other_info" position="after">
@@ -32,3 +32,4 @@
 
     </data>
 </odoo>
+
